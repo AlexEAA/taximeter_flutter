@@ -31,15 +31,21 @@ class OrdersList{
 
 class OrderItem{
   final String distance;
+  final String payType;
+  final String dispatcherPay;
+  final String cost;
+
   final String dispatcherName;
 
 
-  OrderItem({this.distance, this.dispatcherName});
-
+  OrderItem({this.distance, this.payType, this.dispatcherPay, this.cost, this.dispatcherName});
 
   factory OrderItem.fromJson(Map<String,dynamic> json) {
     return OrderItem(
       distance: json['dist'],
+      payType: json['pay'],
+      dispatcherPay: json['disp_pay'],
+      cost: json['cost'],
       dispatcherName: json['disp'],
     );
   }
